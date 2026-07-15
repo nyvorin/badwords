@@ -9060,9 +9060,9 @@ write-file-atomic@^5.0.1:
     signal-exit "^4.0.1"
 
 ws@^5.2.0:
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.4.tgz#c7bea9f1cfb5f410de50e70e82662e562113f9a7"
-  integrity sha512-fFCejsuC8f9kOSu9FYaOw8CdO68O3h5v0lg4p74o8JqWpwTf9tniOD+nOB78aWoVSS6WptVUmDrp/KPsMVBWFQ==
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.6.tgz#a637a50eedac4c95b108216f4eaa3c43812c2adc"
+  integrity sha512-pZqPSysCikQ2w741fd7yuFNWzu38hP2ISBDAa+FsKVFbYG/bCOTPHOdeeyzR6teUjA3ksjjhlFsumWN6VpRo6w==
   dependencies:
     async-limiter "~1.0.0"
 
