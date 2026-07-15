@@ -25,6 +25,32 @@ const filter = new Filter();
 console.log(filter.clean("Don't be an ash0le")); //Don't be an ******
 ```
 
+### Tagged templates
+
+Clean strings inline with a tagged template literal. The recommended form is
+`createFilter(options)`, which binds a tag to its own configured filter:
+
+```js
+import { createFilter } from 'bad-words'
+
+const filter = createFilter({ placeHolder: 'x', exclude: ['hells'] })
+
+filter`Don't be an ash0le` //Don't be an xxxxxx
+filter`you ${userInput}!` //interpolated values are cleaned too
+```
+
+A zero-config `filter` tag is also exported for quick use — it's equivalent to
+`createFilter()`:
+
+```js
+import { filter } from 'bad-words'
+
+filter`Don't be an ash0le` //Don't be an ******
+```
+
+The tag joins the template's literals and interpolated values, then cleans the
+whole string — output is identical to calling `.clean()` on the same text.
+
 ### Placeholder Overrides
 
 ```js
