@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # standard-version needs full history and tags to compute the
+          # version bump; a shallow clone silently downgrades feat to patch.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           # Node 22 satisfies trusted publishing (>= 22.14) and the
@@ -24,4 +28,7 @@ jobs:
       - run: yarn install
       - run: git config --global user.email "action@github.com"
       - run: git config --global user.name "GitHub Action"
-      - run: yarn release
+      # Run the release through npm, not yarn: yarn 1 overrides
+      # npm_config_registry to registry.yarnpkg.com, which breaks OIDC
+      # trusted publishing (it only works against registry.npmjs.org).
+      - run: npm run release
