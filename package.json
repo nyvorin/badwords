@@ -7,11 +7,19 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/esm/index.js",
-      "types": "./dist/index.d.ts"
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
+  "files": [
+    "dist"
+  ],
   "directories": {
     "test": "test",
     "src": "src"
@@ -20,17 +28,18 @@
     "prettier": "prettier --write ./src",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
-    "prepublishOnly": "tsc",
+    "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json && node ./scripts/write-dist-markers.mjs",
+    "prepublishOnly": "npm run build",
     "prepare": "husky && tsc",
     "rc": "standard-version --prerelease && git push --follow-tags && npm publish",
     "release": "standard-version && git push --follow-tags && npm publish",
     "test": "ava",
+    "test:packaging": "./scripts/test-packaging.sh",
     "typedoc": "typedoc --out docs ./src/badwords.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/web-mech/badwords.git"
+    "url": "git+https://github.com/nyvorin/badwords.git"
   },
   "keywords": [
     "curse",
