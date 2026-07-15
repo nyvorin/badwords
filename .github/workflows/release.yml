@@ -15,7 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          # Node 22 satisfies trusted publishing (>= 22.14) and the
+          # devDependency engine ranges, which reject Node 24 under yarn 1.
+          node-version: 22
           registry-url: https://registry.npmjs.org/
       # Trusted publishing requires npm >= 11.5.1
       - run: npm install -g npm@latest
