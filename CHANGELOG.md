@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/nyvorin/badwords/compare/v4.0.0...v4.1.0) (2026-07-15)
+
+### Features
+
+- **filter:** add tagged template helper ([f081631](https://github.com/nyvorin/badwords/commit/f0816315a81d188f27681b275c127df3c397c8b3))
+
+### Bug Fixes
+
+- **package:** ship CJS build as commonjs and correct publish metadata ([c9944cd](https://github.com/nyvorin/badwords/commit/c9944cd81e15802bc53cd9704ab74cd6eac68346)), closes [#184](https://github.com/nyvorin/badwords/issues/184) [#180](https://github.com/nyvorin/badwords/issues/180)
+
 ## 4.0.0 (2024-08-18)
 
 ## [4.0.0-0](https://github.com/web-mech/badwords/compare/v3.0.4...v4.0.0-0) (2024-08-18)
