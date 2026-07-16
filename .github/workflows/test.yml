@@ -10,7 +10,9 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        # node 18 is EOL and the dev toolchain (ava's cbor dep) needs >= 20;
+        # 22 matches the release job.
+        node-version: [20.x, 22.x]
 
     steps:
       - uses: actions/checkout@v3
