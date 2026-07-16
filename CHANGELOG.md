@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.2](https://github.com/nyvorin/badwords/compare/v4.1.1...v4.1.2) (2026-07-16)
+
 ### [4.1.1](https://github.com/nyvorin/badwords/compare/v4.1.0...v4.1.1) (2026-07-15)
 
 ## [4.1.0](https://github.com/nyvorin/badwords/compare/v4.0.0...v4.1.0) (2026-07-15)
