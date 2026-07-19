@@ -102,3 +102,20 @@ test('clean: Should not throw exceptions when nothing but whitespace passed to f
   )
   t.is(filter.clean(''), '')
 })
+
+test('clean: Cleans non-english sentences', (t) => {
+  const filter = new Filter()
+
+  const ruBadWordTest = 'мило'
+  const cnBadWordTest = '吃'
+  const jpBadWordTest = 'ワイン'
+
+  let teststring = filter.clean(ruBadWordTest)
+  t.is(filter.clean(teststring), ruBadWordTest)
+
+  teststring = filter.clean(cnBadWordTest)
+  t.is(filter.clean(teststring), cnBadWordTest)
+
+  teststring = filter.clean(jpBadWordTest)
+  t.is(filter.clean(teststring), jpBadWordTest)
+})
